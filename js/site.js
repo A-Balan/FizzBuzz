@@ -9,8 +9,6 @@ function getValues() {
     fizzValue = Number(fizzValue);
     buzzValue = Number(buzzValue);
 
-    console.log(fizzValue, buzzValue);
-
     // input validation
     if (isNaN(fizzValue) == true || isNaN(buzzValue) == true) {
         // make sure user inputs real number
