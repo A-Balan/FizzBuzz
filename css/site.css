@@ -83,3 +83,23 @@ footer {
     font-size: 3.5rem;
     padding-left: .2rem;
 }
+
+
+#results .col {
+    border: solid 1px lightgrey;
+    text-align: center;
+}
+
+.Fizz,
+.Buzz,
+.FizzBuzz {
+    background-color: red;
+}
+
+.Fizz {
+    background-color: yellow;
+}
+
+.Buzz {
+    background-color: grey;
+}

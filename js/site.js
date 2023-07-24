@@ -1,41 +1,48 @@
-// CONTROLLER FUNCTION -get inputs and displays generated values on page!
+// CONTROLLER FUNCTION -get inputs, validate them, pass the values to other functions 
 function getValues() {
 
-    // get values from doc
+    // get fizz,buzz and max values from doc
     let fizzValue = document.getElementById("fizzValue").value;
     let buzzValue = document.getElementById("buzzValue").value;
+    let max = document.getElementById("max").value;
+
 
     // convert to numbers
-    fizzValue = Number(fizzValue);
-    buzzValue = Number(buzzValue);
+    fizzValue = parseInt(fizzValue);
+    buzzValue = parseInt(buzzValue);
+    max = parseInt(max);
 
     // input validation
-    if (isNaN(fizzValue) == true || isNaN(buzzValue) == true) {
+    if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue) && Number.isInteger(max) && max <= 1000 && max > 0) {
         // make sure user inputs real number
+         // generate array>
+         let array = generateFizzBuzz(fizzValue, buzzValue, max);
+         // display array >>
+         displayFizzBuzz(array);
+
+    } else {
         Swal.fire({
             title: "Oops!",
-            text: "Type in a number, not text",
+            text: "Type in a number, not text, and make sure you're values are between 1-1000",
             icon: "error",
             backdrop: false
         })
-    } else {
-        // display numbers if all is ok
-        let array = generateFizzBuzz(fizzValue, buzzValue);
-
-        displayFizzBuzz(array);
     }
 }
 
-// LOGIC FUNCTION
-function generateFizzBuzz(fizzValue, buzzValue) {
+// LOGIC FUNCTION create array according to fizzbuzz rules.
+function generateFizzBuzz(fizzValue, buzzValue, max) {
 
     // initialize array
+    // FOR each number from 1 - max
+    // check if # div by values & put right value into array
+    // return means you're giving it back to whatever function called this function
 
     let array = [];
 
     // For-Loop 1-100
 
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= max; i++) {
         // boolean modulo check & push to array
         if (i % fizzValue == 0 && i % buzzValue == 0) {
             array.push("FizzBuzz");
@@ -51,24 +58,23 @@ function generateFizzBuzz(fizzValue, buzzValue) {
 }
 
 
-// VIEW FUNCTION- connects to html doc
+// VIEW FUNCTION- take in array of values and display them on page.
 function displayFizzBuzz(array) {
 
-    let tableHtml = "";
+    let FBhtml = "";
 
     // loop array, table row for each result
     for (let index = 0; index < array.length; index++) {
 
         let currentNumber = array[index];
 
-        let name = "";
-
-        let tableRowHtml = `<tr><td class="${name}">${currentNumber}</td></tr>`;
-
-        tableHtml = tableHtml + tableRowHtml;
+        FBhtml = FBhtml + `<div class="col ${currentNumber}">` + currentNumber + `</div>`;
     }
-    // add rows to table
-    document.getElementById("results").innerHTML = tableHtml;
+    // here we put the div-row html to JS
+    let resultsRow = document.getElementById("results");
+
+    // results go here
+    resultsRow.innerHTML = FBhtml;
 
 
 }
