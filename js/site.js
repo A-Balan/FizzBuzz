@@ -6,8 +6,10 @@ function getValues() {
     let buzzValue = document.getElementById("buzzValue").value;
 
     // convert to numbers
-    fizzValue= Number(fizzValue);
+    fizzValue = Number(fizzValue);
     buzzValue = Number(buzzValue);
+
+    console.log(fizzValue, buzzValue);
 
     // input validation
     if (isNaN(fizzValue) == true || isNaN(buzzValue) == true) {
@@ -62,7 +64,7 @@ function displayFizzBuzz(array) {
         let currentNumber = array[index];
 
         let name = "";
-    
+
         let tableRowHtml = `<tr><td class="${name}">${currentNumber}</td></tr>`;
 
         tableHtml = tableHtml + tableRowHtml;
