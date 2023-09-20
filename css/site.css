@@ -115,7 +115,7 @@ footer {
 .Fizz,
 .Buzz,
 .FizzBuzz {
-    background-color: red;
+    background-color: orange;
 }
 
 .Fizz {
@@ -123,5 +123,5 @@ footer {
 }
 
 .Buzz {
-    background-color: grey;
+    background-color: red;
 }
