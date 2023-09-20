@@ -115,13 +115,13 @@ footer {
 .Fizz,
 .Buzz,
 .FizzBuzz {
-    background-color: orange;
+    background-color: rgb(255, 130, 21);
 }
 
 .Fizz {
-    background-color: #FFF18D;
+    background-color: rgb(252, 252, 141);
 }
 
 .Buzz {
-    background-color: red;
+    background-color: rgb(192, 76, 76);
 }
