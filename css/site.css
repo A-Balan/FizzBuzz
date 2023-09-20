@@ -27,7 +27,11 @@
     --bs-btn-bg: var(--ab-theme-600);
     --bs-btn-border-color: var(--ab-theme-600);
     --bs-btn-hover-bg: var(--ab-theme-700);
+    --bs-btn-active-bg: var(--ab-theme-800);
+    --bs-btn-active-border-color: var(--ab-theme-800);
+
 }
+
 
 .navbar,
 .footer {
@@ -62,12 +66,12 @@ footer {
 .socialicons {
     font-size: 1.5rem;
     padding-left: .5rem;
-    color: var(--ab-theme-700);
+    color: var(--ab-theme-300);
     transition: color 0.2s;
 }
 
 .socialicons:hover {
-    color: yellow;
+    color: #FFF18D;
 }
 
 .app-logo-class {
@@ -84,12 +88,30 @@ footer {
     padding-left: .2rem;
 }
 
+.img-round {
+    border-radius: 2rem;
+    max-height: 60vh;
+
+}
+
+.img-shadow {
+    -webkit-box-shadow: 10px 10px 34px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 34px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 34px 0px rgba(0, 0, 0, 0.75)
+}
+
+.img-round-sm {
+    border-radius: 2rem;
+    max-height: 40vh;
+    margin-top: 2rem;
+}
 
 #results .col {
     border: solid 1px lightgrey;
     text-align: center;
 }
 
+/* currentValue */
 .Fizz,
 .Buzz,
 .FizzBuzz {
@@ -97,7 +119,7 @@ footer {
 }
 
 .Fizz {
-    background-color: yellow;
+    background-color: #FFF18D;
 }
 
 .Buzz {

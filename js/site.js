@@ -23,7 +23,7 @@ function getValues() {
     } else {
         Swal.fire({
             title: "Oops!",
-            text: "Type in a number, not text, and make sure you're values are between 1-1000",
+            text: "Type in a number, not text, and make sure your values are between 1-1000",
             icon: "error",
             backdrop: false
         })
@@ -66,9 +66,9 @@ function displayFizzBuzz(array) {
     // loop array, table row for each result
     for (let index = 0; index < array.length; index++) {
 
-        let currentNumber = array[index];
+        let currentValue = array[index];
 
-        FBhtml = FBhtml + `<div class="col ${currentNumber}">` + currentNumber + `</div>`;
+        FBhtml = FBhtml + `<div class="col ${currentValue}">` + currentValue + `</div>`;
     }
     // here we put the div-row html to JS
     let resultsRow = document.getElementById("results");
@@ -77,4 +77,33 @@ function displayFizzBuzz(array) {
     resultsRow.innerHTML = FBhtml;
 
 
+}
+
+function copyToClipboard() {
+    // Copy the text inside the text field
+    navigator.clipboard.writeText("abalan0326@gmail.com");
+}
+
+function showClipboardMessage() {
+    // Swal.fire({
+    //     text: "abalan0326@gmail.com",
+    //     confirmButtonText: "Copy"
+    // }).then(function (result) {
+    //     copyToClipboard();
+    // });
+
+    Swal.fire({
+        html: '<br />abalan0326@gmail.com ',
+        showCloseButton: true,
+        focusConfirm: false,
+        confirmButtonText: '<i class="bi bi-clipboard"></i> Copy',
+    }).then(function (result) {
+        copyToClipboard();
+
+        if (result.value === true) {
+            Swal.fire({
+                html: "<br />Copied to Clipboard!"
+            })
+        }
+    })
 }
